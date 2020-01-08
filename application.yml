@@ -1,0 +1,29 @@
+server:
+  port: 20003
+zeromq:
+  port: 5563
+  host: tcp://edgex-core-data
+
+coredataUrl: http://edgex-core-data:48080
+backupRequired: true
+
+#-----------------------Logging types-------------------------------
+logging:
+  remote:
+    enable: true
+    url: http://edgex-support-logging:48061/api/v1/logs
+  level.org.springframework: ERROR
+  level.org.apache: ERROR
+  level.org.edgexfoundry: INFO
+  file: /saarthaiot/logs/datamanagement.log
+spring:
+  data:
+    mongodb:
+      username: core
+      password: password
+      database: coredata
+      host: edgex-mongo
+      port: 27017
+      connectTimeout: 120000
+      socketTimeout: 60000
+      maxWaitTime: 120000
